@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0F0C29;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.medialab.medialabproject.controllers.MainController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="90.0" prefWidth="200.0" spacing="50.0" style="-fx-background-color: #302B63;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="totalCategoriesLabel" text="Categories" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label fx:id="totalDocumentsLabel" alignment="CENTER" text="Documents" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label fx:id="followedDocumentsLabel" alignment="CENTER_RIGHT" text="Following" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children>
+         <padding>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="130.0" spacing="8.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#showDocuments" style="-fx-background-color: #D1C4E9;" text="Documents" />
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#showSearch" style="-fx-background-color: #D1C4E9;" text="Search" />
+            <Separator prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#showFollowed" style="-fx-background-color: #D1C4E9;" text="Followed" />
+            <Separator prefWidth="200.0" visible="${categoriesBtn.visible}"/>
+            <Button fx:id="categoriesBtn" mnemonicParsing="false" onAction="#showCategories" style="-fx-background-color: #D1C4E9;" text="Categories" />
+            <Separator prefWidth="200.0" visible="${usersBtn.visible}"/>
+            <Button fx:id="usersBtn" mnemonicParsing="false" onAction="#showUsers" style="-fx-background-color: #D1C4E9;" text="Users" />
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

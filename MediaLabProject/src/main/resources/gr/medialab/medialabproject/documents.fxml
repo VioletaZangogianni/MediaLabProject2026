@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #0F0C29;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gr.medialab.medialabproject.controllers.DocumentsController">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Filter by Category:" textFill="WHITE" />
+            <ComboBox fx:id="categoryFilter" onAction="#filterByCategory" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <TableView fx:id="documentsTable" prefHeight="374.0" prefWidth="570.0" style="-fx-background-color: #6B6B83;" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="titleCol" prefWidth="196.80005186796188" text="Title" />
+          <TableColumn fx:id="authorCol" minWidth="9.60003662109375" prefWidth="130.40000915527344" text="Author" />
+            <TableColumn fx:id="categoryCol" prefWidth="91.20001220703125" text="Category" />
+            <TableColumn fx:id="dateCol" text="Date Created" />
+            <TableColumn fx:id="versionCol" prefWidth="57.59991455078125" text="Version" />
+        </columns>
+      </TableView>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#viewDocument" style="-fx-background-color: #D1C4E9;" text="View Document" />
+            <Button fx:id="editBtn" mnemonicParsing="false" onAction="#editDocument" style="-fx-background-color: #D1C4E9;" text="Edit Document" />
+            <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteDocument" style="-fx-background-color: #D1C4E9;" text="Delete Document" />
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#addDocument" style="-fx-background-color: #D1C4E9;" text="Add Document" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
